@@ -9,10 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import co.enoobong.customarrayadapter.R
 import co.enoobong.customarrayadapter.adapter.CustomArrayAdapter
-import co.enoobong.customarrayadapter.model.Chair
-import co.enoobong.customarrayadapter.model.Computer
-import co.enoobong.customarrayadapter.model.Hotel
-import co.enoobong.customarrayadapter.model.HotelAdapter
+import co.enoobong.customarrayadapter.model.*
 import kotlinx.android.synthetic.main.demo_activity_layout.*
 
 class DemoActivity: AppCompatActivity() {
@@ -37,6 +34,12 @@ class DemoActivity: AppCompatActivity() {
                 Hotel("Raheem and Sons", "Ilasa", false, false)
         )
 
+        val listOfPhones = listOf(
+                Phone("Techno", "CX", true),
+                Phone("Samsung", "S8", true),
+                Phone("Fero", "RTP184", false)
+        )
+
         //Uses class toString - implemented wrongly, works but wrong!
         spFirst.adapter = ArrayAdapter(this,  android.R.layout.simple_spinner_item, listOfComputers)
 
@@ -49,5 +52,6 @@ class DemoActivity: AppCompatActivity() {
         //Works, not sustainable :(
         spFourth.adapter = HotelAdapter(this, android.R.layout.simple_spinner_item, listOfHotels)
 
+        spFifth.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, listOfPhones)
     }
 }

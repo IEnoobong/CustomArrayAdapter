@@ -29,6 +29,6 @@ class Chair(val make: String, val model: String, val type: String): ModelDisplay
         //Correct use of toString
         return "Chair(make='$make', model='$model', type='$type')"
     }
-
-
 }
+
+class Phone(val make: String, val model: String, val is4gEnabled: Boolean) //No toString

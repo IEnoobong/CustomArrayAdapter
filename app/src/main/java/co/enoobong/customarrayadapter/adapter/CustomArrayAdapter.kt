@@ -15,33 +15,34 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import co.enoobong.customarrayadapter.model.ModelDisplayName
 
-class CustomArrayAdapter(private val mContext: Context,
+class CustomArrayAdapter(context: Context,
                          @LayoutRes private val layoutResource: Int,
                          @IdRes private val textViewResourceId: Int = 0,
-                         private val values: List<ModelDisplayName>) : ArrayAdapter<ModelDisplayName>(mContext, layoutResource, values){
+                         private val values: List<ModelDisplayName>) : ArrayAdapter<ModelDisplayName>(context, layoutResource, values) {
 
     override fun getItem(position: Int): ModelDisplayName = values[position]
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = createViewFromResource(convertView, mContext, parent, layoutResource)
+        val view = createViewFromResource(convertView, parent, layoutResource)
 
         return bindData(getItem(position), view)
     }
 
     override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = createViewFromResource(convertView, mContext, parent, android.R.layout.simple_spinner_dropdown_item)
+        val view = createViewFromResource(convertView, parent, android.R.layout.simple_spinner_dropdown_item)
 
         return bindData(getItem(position), view)
     }
 
-    private fun createViewFromResource(convertView: View?, context: Context, parent: ViewGroup, layoutResource: Int): TextView {
+    private fun createViewFromResource(convertView: View?, parent: ViewGroup, layoutResource: Int): TextView {
+        val context = parent.context
         val view = convertView ?: LayoutInflater.from(context).inflate(layoutResource, parent, false)
         return try {
             if (textViewResourceId == 0) view as TextView
             else {
                 view.findViewById(textViewResourceId) ?:
                         throw RuntimeException("Failed to find view with ID " +
-                                "${mContext.resources.getResourceName(textViewResourceId)} in item layout")
+                                "${context.resources.getResourceName(textViewResourceId)} in item layout")
             }
         } catch (ex: ClassCastException){
             Log.e("CustomArrayAdapter", "You must supply a resource ID for a TextView")

@@ -5,7 +5,7 @@
 package co.enoobong.customarrayadapter.model
 
 
-class Computer(val make: String, val model: String, val serialNumber: String){
+class Computer(private val make: String, val model: String, val serialNumber: String) {
 
     override fun toString(): String {
         //wrong use of toString
@@ -13,7 +13,7 @@ class Computer(val make: String, val model: String, val serialNumber: String){
     }
 }
 
-class Hotel(val name: String, val address: String, val hasPool: Boolean, val hasWifi: Boolean){
+class Hotel(val name: String, private val address: String, private val hasPool: Boolean, private val hasWifi: Boolean) {
 
     override fun toString(): String {
         return "Hotel(name='$name', address='$address', hasPool=$hasPool, hasWifi=$hasWifi)"
@@ -21,7 +21,7 @@ class Hotel(val name: String, val address: String, val hasPool: Boolean, val has
 
 }
 
-class Chair(val make: String, val model: String, val type: String): ModelDisplayName{
+class Chair(private val make: String, private val model: String, private val type: String) : ModelDisplayName {
 
     override val displayName get() = make
 

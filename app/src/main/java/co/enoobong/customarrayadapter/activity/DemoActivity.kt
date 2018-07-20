@@ -9,7 +9,11 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import co.enoobong.customarrayadapter.R
 import co.enoobong.customarrayadapter.adapter.CustomArrayAdapter
-import co.enoobong.customarrayadapter.model.*
+import co.enoobong.customarrayadapter.adapter.HotelAdapter
+import co.enoobong.customarrayadapter.model.Chair
+import co.enoobong.customarrayadapter.model.Computer
+import co.enoobong.customarrayadapter.model.Hotel
+import co.enoobong.customarrayadapter.model.Phone
 import kotlinx.android.synthetic.main.demo_activity_layout.*
 
 class DemoActivity: AppCompatActivity() {

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur)
- */
-
 package co.enoobong.customarrayadapter.adapter
 
 import android.content.Context
@@ -18,7 +14,7 @@ import co.enoobong.customarrayadapter.model.ModelDisplayName
 class CustomArrayAdapter<T : ModelDisplayName>(context: Context,
                                                @LayoutRes private val layoutResource: Int,
                                                @IdRes private val textViewResourceId: Int = 0,
-                                               private val values: List<T>) : ArrayAdapter<T>(context, layoutResource, values) {
+                                               values: List<T>) : ArrayAdapter<T>(context, layoutResource, values) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = createViewFromResource(convertView, parent, layoutResource)
@@ -34,14 +30,16 @@ class CustomArrayAdapter<T : ModelDisplayName>(context: Context,
 
     private fun createViewFromResource(convertView: View?, parent: ViewGroup, layoutResource: Int): TextView {
         val context = parent.context
-        val view = convertView ?: LayoutInflater.from(context).inflate(layoutResource, parent, false)
+        val view = convertView
+                ?: LayoutInflater.from(context).inflate(layoutResource, parent, false)
         return try {
             if (textViewResourceId == 0) {
                 view as TextView
             } else {
-                view.findViewById(textViewResourceId) ?: throw RuntimeException("Failed to find view with ID " + "${context.resources.getResourceName(textViewResourceId)} in item layout")
+                view.findViewById(textViewResourceId)
+                        ?: throw RuntimeException("Failed to find view with ID " + "${context.resources.getResourceName(textViewResourceId)} in item layout")
             }
-        } catch (ex: ClassCastException){
+        } catch (ex: ClassCastException) {
             Log.e("CustomArrayAdapter", "You must supply a resource ID for a TextView")
             throw IllegalStateException("ArrayAdapter requires the resource ID to be a TextView", ex)
         }

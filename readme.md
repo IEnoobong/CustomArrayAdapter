@@ -1,6 +1,6 @@
 # Custom Array Adapter
 
-Simple Kotlin Library to help create custom array adapters for views like spinners
+Simple Android Kotlin Library to help create custom array adapters for adapter views like spinners
 
 Read [Customer Array Adapter](https://android.jlelse.eu/creating-custom-array-adapters-in-android-a-better-way-dc492c89512https://android.jlelse.eu/creating-custom-array-adapters-in-android-a-better-way-dc492c89512) for reasons, see sample code for too
 

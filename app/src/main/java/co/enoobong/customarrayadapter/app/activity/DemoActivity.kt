@@ -2,18 +2,18 @@
  * Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur)
  */
 
-package co.enoobong.customarrayadapter.activity
+package co.enoobong.customarrayadapter.app.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import co.enoobong.customarrayadapter.R
-import co.enoobong.customarrayadapter.adapter.CustomArrayAdapter
-import co.enoobong.customarrayadapter.adapter.HotelAdapter
-import co.enoobong.customarrayadapter.model.Chair
-import co.enoobong.customarrayadapter.model.Computer
-import co.enoobong.customarrayadapter.model.Hotel
-import co.enoobong.customarrayadapter.model.Phone
+import co.enoobong.customarrayadapter.app.adapter.HotelAdapter
+import co.enoobong.customarrayadapter.app.model.Chair
+import co.enoobong.customarrayadapter.app.model.Computer
+import co.enoobong.customarrayadapter.app.model.Hotel
+import co.enoobong.customarrayadapter.app.model.Phone
+import co.enoobong.customarrayadapter.lib.adapter.CustomArrayAdapter
 import kotlinx.android.synthetic.main.demo_activity_layout.*
 
 class DemoActivity: AppCompatActivity() {

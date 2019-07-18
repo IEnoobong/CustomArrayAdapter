@@ -2,7 +2,7 @@
  * Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur)
  */
 
-package co.enoobong.customarrayadapter.adapter
+package co.enoobong.customarrayadapter.app.adapter
 
 import android.content.Context
 import android.support.annotation.LayoutRes
@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import co.enoobong.customarrayadapter.model.Hotel
+import co.enoobong.customarrayadapter.app.model.Hotel
 
 //Works but not sustainable if you have to write tons of them
 class HotelAdapter(context: Context, @LayoutRes private val layoutResource: Int, private val hotels: List<Hotel>) :

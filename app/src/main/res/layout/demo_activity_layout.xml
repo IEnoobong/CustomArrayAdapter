@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/activity_horizontal_margin"
     android:orientation="vertical"
-    tools:showin="co.enoobong.customarrayadapter.activity.DemoActivity">
+    tools:showin="co.enoobong.customarrayadapter.app.activity.DemoActivity">
 
     <Spinner
         android:id="@+id/spFirst"

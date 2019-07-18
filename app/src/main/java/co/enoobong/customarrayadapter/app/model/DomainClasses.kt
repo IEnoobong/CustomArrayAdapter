@@ -2,7 +2,9 @@
  * Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur)
  */
 
-package co.enoobong.customarrayadapter.model
+package co.enoobong.customarrayadapter.app.model
+
+import co.enoobong.customarrayadapter.lib.model.ModelDisplayName
 
 
 class Computer(private val make: String, val model: String, val serialNumber: String) {
@@ -21,7 +23,8 @@ class Hotel(val name: String, private val address: String, private val hasPool: 
 
 }
 
-class Chair(private val make: String, private val model: String, private val type: String) : ModelDisplayName {
+class Chair(private val make: String, private val model: String, private val type: String) :
+    ModelDisplayName {
 
     override val displayName get() = make
 

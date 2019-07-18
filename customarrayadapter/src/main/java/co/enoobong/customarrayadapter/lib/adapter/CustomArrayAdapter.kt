@@ -1,4 +1,4 @@
-package co.enoobong.customarrayadapter.adapter
+package co.enoobong.customarrayadapter.lib.adapter
 
 import android.content.Context
 import android.support.annotation.IdRes
@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import co.enoobong.customarrayadapter.model.ModelDisplayName
+import co.enoobong.customarrayadapter.lib.model.ModelDisplayName
 
 class CustomArrayAdapter<T : ModelDisplayName>(context: Context,
                                                @LayoutRes private val layoutResource: Int,
